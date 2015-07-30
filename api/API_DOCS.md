@@ -24,3 +24,8 @@ Returns
 * post_data
 * access_token
 * application_id
+
+### New Comment url: /api/new/comment method: POST content_type: application/json
+* comment_data
+* application_id
+* access_token
