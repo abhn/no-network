@@ -18,3 +18,14 @@ def getUser(request, user_id, access_token):
     else:
         return HttpResponse(json.dumps({"error":"userID is orphaned"}), content_type="application/json")
     
+def getPost(request, post_id, access_token):
+    pass
+
+def getComment(request, comment_id, access_token):
+    pass
+
+def getStar(request, star_id, access_token):
+    pass
+
+def getRecommend(request, recommend_id, access_token):
+    pass

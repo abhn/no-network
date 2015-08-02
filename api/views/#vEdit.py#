@@ -46,3 +46,5 @@ def user(request, user_id, access_token):
                      return HttpResponse(json.dumps({"message": "successfully edited user"}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error":"POST request expected"}), content_type="application/json")
+    
+def post(request, post_id, access_token):
