@@ -1,0 +1,11 @@
+from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
+from api import models
+import json
+
+@csrf_exempt
+def error404(request):
+    return HttpResponse(json.dumps({"error":"40okjoij4"}, content_type="application/json"))
+
+def error500(request):
+    return HttpResponse(json.dumps({"error":"500lolwa"}, content_type="application/json"))

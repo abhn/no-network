@@ -22,3 +22,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include('api.urls')),
 ]
+
+handler404 = 'api.views.vError.error404'
+handler500 = 'api.views.vError.error500'
+handler403 = 'api.views.vError.error403'
+handler400 = 'api.views.vError.error400'

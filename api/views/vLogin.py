@@ -25,9 +25,9 @@ def login(request):
                     access_token.save()
                     return HttpResponse(json.dumps(resp), content_type="application/json")
                 else:
-                    return HttpResponse(json.dumps({"error": "email or password incorrect"}), content_type="application/json")
+                    return HttpResponse(json.dumps({"message":"email or password incorrect", "error":"400"}), content_type="application/json")
             except IndexError:
-                return HttpResponse(json.dumps({"error": "email or password incorrect"}), content_type="application/json")
+                return HttpResponse(json.dumps({"message":"email or password incorrect", "error":"400"}), content_type="application/json")
             
     else:
-        return HttpResponse(json.dumps({"error": "POST request expected"}), content_type="application/json")
+        return HttpResponse(json.dumps({"message": "POST request expected", "error":"400"}), content_type="application/json")
