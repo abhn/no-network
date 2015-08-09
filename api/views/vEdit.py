@@ -63,3 +63,20 @@ def post(request):
             return HttpResponse(json.dumps({"message": "authentication required to perform this action"}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error":"POST request expected"}), content_type="application/json")
+
+@csrf_exempt
+def comment(request):
+    if request.method == "POST":
+        if request.is_ajax:
+            nData = json.loads(request.body)
+            if(models.ApiAccessToken.objects.all().filter(user_id=nData['user_id']).filter(access_token=nData['access_token']).exists()):
+                if(models.ApiComments.objects.all().filter(comment_source_id=nData['user_id']).filter(comment_id=nData['comment_id']).exists()):
+                    comment_data = nData['data']
+                    comment_db = models.ApiComment.objects.get(comment_id=nData['comment_id'])
+                    comment_db.comment_data = comment_data
+                    comment_db.save()
+                    return HttpResponse(json.dumps({"message": "successfully edited comment"}), content_type="application/json")
+                return HttpResponse(json.dumps({"message": "comment does not exist"}), content_type="application/json")
+            return HttpResponse(json.dumps({"message": "authentication required to perform this action"}), content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"error":"POST request expected"}), content_type="application/json")

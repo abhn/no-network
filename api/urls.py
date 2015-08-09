@@ -18,4 +18,12 @@ urlpatterns = [
 
     url('^edit/user/$', views.vEdit.user, name='edituser'),
     url('^edit/post/$', views.vEdit.post, name='editpost'),
+    url('^edit/comment/$', views.vEdit.comment, name='editcomment'),
+
+    url('^delete/user/$', views.vDelete.user, name='deleteuser'),
+    url('^delete/post/$', views.vDelete.post, name='deletepost'),
+    url('^delete/comment/$', views.vDelete.comment, name='deletecomment'),
+    url('^delete/star/$', views.vDelete.star, name='deletestar'),
+    url('^delete/recommend/$', views.vDelete.recommend, name='deleterecommend'),
+    
 ]
