@@ -24,7 +24,8 @@ def newPost(request):
                 return HttpResponse(json.dumps({"error":"authentication required to perform this action"}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error":"POST request expected"}), content_type="application/json")
-
+    
+@csrf_exempt
 def newComment(request):
     if(request.method == "POST"):
         if(request.is_ajax):
@@ -45,6 +46,7 @@ def newComment(request):
     else:
         return HttpResponse(json.dumps({"error":"POST request expected"}), content_type="application/json")
 
+@csrf_exempt
 def newStar(request):
     if(request.method == "POST"):
         if(request.is_ajax):
@@ -64,6 +66,7 @@ def newStar(request):
     else:
         return HttpResponse(json.dumps({"error":"POST request expected"}), content_type="application/json")
 
+@csrf_exempt
 def newRecommend(request):
     if(request.method == "POST"):
         if(request.is_ajax):

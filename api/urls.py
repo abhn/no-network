@@ -15,5 +15,7 @@ urlpatterns = [
     url('^comments/(?P<comment_id>[0-9]+)/(?P<access_token>[0-9a-z\-]+)/$', views.vInfo.getComment, name='getcomment'),
     url('^stars/(?P<star_id>[0-9]+)/(?P<access_token>[0-9a-z\-]+)/$', views.vInfo.getStar, name='getStar'),
     url('^recommends/(?P<recommend_id>[0-9]+)/(?P<access_token>[0-9a-z\-]+)/$', views.vInfo.getRecommend, name='getrecommend'),
-    
+
+    url('^edit/user/$', views.vEdit.user, name='edituser'),
+    url('^edit/post/$', views.vEdit.post, name='editpost'),
 ]
