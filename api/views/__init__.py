@@ -4,3 +4,4 @@ import vInfo
 import vNew
 import vError
 import vEdit
+import vDelete
