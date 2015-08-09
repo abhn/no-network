@@ -10,16 +10,13 @@
 ### Modifying calls
 * [POST /register](#postregister)
 * [POST /login](#postlogin)
-
 * [POST /new/post](#postnewpost)
 * [POST /new/comment](#postnewcomment)
 * [POST /new/star](#postnewstar)
 * [POST /new/recommend](#postnewrecommend)
-
 * [POST /edit/user](#postedituser)
 * [POST /edit/post](#posteditpost)
 * [POST /edit/comment](#posteditcomment)
-
 * [POST /delete/user](#postdeleteuser)
 * [POST /delete/post](#postdeletepost)
 * [POST /delete/comment](#postdeletecomment)
